@@ -1,0 +1,16 @@
+/*
+header with profile picture and name
+hardcoded to work on front-end dev
+*/
+
+header {
+  display: flex;
+  color: #FFFFFF;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  height: 520px;
+  width: 100%;
+  background-color: #cc8800;
+  background-image: url(/images/light-paper-fibers.png);
+}

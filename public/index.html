@@ -9,11 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:wght@300;600&display=swap" rel="stylesheet">
 
+    <!--font awesome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -26,9 +31,28 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo">tweeter</span>
+      <div class="new-tweet-container">
+        <span class="write-button"><b>Write</b> a new tweet</span>
+        <i class="fa-solid fa-angles-down"></i>
+      </div>
     </nav>
-
+    <!--header with profile-->
+    <header>
+      <div>
+        <img class="profile-pic" src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div>
+        <h2 class="profile-name"><b>Luna</b> Morris</h2>
+      </div>
+    </header>
     <!-- Page-specific (main) content here -->
     <main class="container"></main>
+    <h1>
+      Catch them all off guard with a Pokémon flavored filler text generator, fortifying the classic lorem ipsum with favorites like Bulbasaur, Squirtle and Pikachu.
+    </h1>
+    <p>
+      Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
   </body>
 </html>
