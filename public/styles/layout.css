@@ -30,3 +30,7 @@ main {
   align-self: center;
   background-color: #f4f1ec;
 }
+
+.over-count {
+  color: #FF9494;
+}
