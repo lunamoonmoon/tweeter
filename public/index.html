@@ -39,28 +39,50 @@
       </div>
     </nav>
     <!--header with profile-->
-    <header>
+    <header class="profile">
       <div>
-        <img class="profile-pic" src="/images/profile-hex.png">
+        <img src="/images/profile-hex.png">
       </div>
       <br>
       <div>
-        <h2 class="profile-name"><b>Luna</b> Morris</h2>
+        <h2>Luna Morris</h2>
       </div>
     </header>
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
     <!--form for creating a new tweet-->
-    <section class="new-tweet">
-      <h2><b>Compose Tweet</b></h2>
-      <form action="/tweets/" method="POST">
-        <label for="tweet-text" class="tweet-prompt"><b>What are you humming about?</b></label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div class="submit-tweet">
-          <button type="submit" class="tweet-button">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
+      <section class="new-tweet">
+        <h2><b>Compose Tweet</b></h2>
+        <form action="/tweets/" method="POST">
+          <span class="tweet-input">
+            <label for="tweet-text" class="tweet-prompt"><b>What are you humming about?</b></label>
+            <textarea name="text" id="tweet-text"></textarea>
+          </span>
+          <div class="submit-tweet">
+            <button type="submit" class="tweet-button">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <!--container for all posted tweets-->
+      <article>
+        <header>
+          Crispin @clowninaround
+        </header>
+        No one's allowed to look at me while I'm making art!
+        <footer>
+          1 day ago
+        </footer>
+      </article>
+      <article>
+        <header>
+          Puppycat @imnotcute
+        </header>
+        I would do anything for Pretty Patrick.
+        <footer>
+          30 seconds ago
+        </footer>
+      </article>
+    </main>
   </body>
 </html>

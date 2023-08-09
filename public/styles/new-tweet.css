@@ -14,13 +14,21 @@
   justify-content: space-between;
 }
 
-/* what are you humming about prompt */
-.tweet-prompt {
-  font-size: 1.5em;
+/* what are you humming about prompt and input form */
+span.tweet-input {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
   border-bottom: solid;
+  font-size: 1.5em;
+}
+
+label.tweet-prompt {
+  width: 30%;
 }
 
 textarea#tweet-text {
+  width: 70%;
   background-color: #f4f1ec;
 }
 

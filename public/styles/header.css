@@ -3,7 +3,7 @@ header with profile picture and name
 hardcoded to work on front-end dev
 */
 
-header {
+header.profile {
   display: flex;
   color: #FFFFFF;
   justify-content: flex-end;
@@ -13,4 +13,5 @@ header {
   width: 100%;
   background-color: #cc8800;
   background-image: url(/images/light-paper-fibers.png);
+  font-family: 'Source Sans 3', sans-serif;
 }
