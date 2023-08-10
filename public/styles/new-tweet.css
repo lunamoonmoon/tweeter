@@ -1,6 +1,5 @@
 .new-tweet {
   display: flex;
-  align-content: center;
   flex-direction: column;
   padding: 1.5em;
 }
@@ -24,10 +23,12 @@ span.tweet-input {
 }
 
 label.tweet-prompt {
+  margin-bottom: .5em;
   width: 30%;
 }
 
 textarea#tweet-text {
+  margin-bottom: .5em;
   width: 70%;
   background-color: #f4f1ec;
 }
@@ -36,4 +37,8 @@ textarea#tweet-text {
 button.tweet-button {
   color: #FFFFFF;
   background-color: #00aae4;
+}
+
+.over-count {
+  color: #FF9494;
 }

@@ -27,10 +27,6 @@ body {
 
 main {
   width: 90%;
-  align-self: center;
   background-color: #f4f1ec;
-}
-
-.over-count {
-  color: #FF9494;
+  margin: auto;
 }
