@@ -3,24 +3,33 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+const { request } = require("express");
+import { format, render, cancel, register } from 'timeago.js';
+
 $(document).ready(function() { //runs callback when DOM ready and browser loaded
   
   function renderTweets(tweets) {
-     for (let i of tweets) { // loops through tweets
-      let tweetInHtml = createTweetElement(i); // calls createTweetElement for each tweet
-      $('#tweets-container').append(${tweetInHtml}); // takes return value and appends it to the tweets container
+     for (let tweet of tweets) { // loops through tweets
+      let tweetInHtml = createTweetElement(tweet); // calls createTweetElement for each tweet
+      $('#tweets-container').append(tweetInHtml); // takes return value and appends it to the tweets container
      };
   };
 
   function createTweetElement(tweet) {
+    //markup for tweet format
     const tweetHtml = `
       <article class="tweet">
         <header>
-          ${tweet.user.name} <span class="username">${tweet.user.handle}</span>
+        <div class="profile-avatar-name">
+        <img src="${tweet.user.avatars}">
+        ${tweet.user.name}
+      </div>
+           <span class="username">${tweet.user.handle}</span>
         </header>
         <div class="tweet-text">${tweet.content.text}</div>
         <footer class="date-stamp">
-          ${tweet.created_at}
+          ${format(tweet.created_at)}
           <span class="reaction-buttons">
             <i class="fa-regular fa-heart"></i>
             <i class="fa-regular fa-share-from-square"></i>
@@ -30,25 +39,49 @@ $(document).ready(function() { //runs callback when DOM ready and browser loaded
       </article>
       <br>
     `;
-    return tweetHtml
+    return tweetHtml;
   };
+
+  $("#post-tweet").on("submit", function(event) { //event listener for the submit event
+    event.preventDefault(); //prevent default form submission
+
+    const textValue = $("#tweet-text").val();
+
+    //if form empty or null or over 140 char then send error
+    if (textValue === "" || textValue === null){
+      alert("Please enter a tweet");
+      return;
+    };
+
+    if (textValue.length > 140){
+      alert("Your tweet exceeds the 140 character limit");
+      return;
+    };
+
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $(this).serialize() //send the form data to the server
+    })
+    .fail(function(error) {
+     alert('Error: ' + error); //on error log
+    });
+  });
+
+  function loadtweets() {
+    $.ajax({ //The loadtweets function will use jQuery to make a request to /tweets
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'json', //receives the array of tweets as JSON
+      success: function(formInput) {
+        renderTweets(formInput);
+      },
+      error: function(error) {
+        console.error('Error: ', error);
+      }
+    });
+  };
+
+loadtweets();
+
 });
-
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-}
-
-const $tweet = createTweetElement(tweetData);
-
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
