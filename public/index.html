@@ -24,11 +24,12 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> <!-- time ago library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="module" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
   </head>
 
   <body>
@@ -43,18 +44,20 @@
     <!--header with profile-->
     <header class="profile">
       <div>
-        <img src="/images/profile-hex.png">
+        <img class="profile-pic" alt="icon of a female" src="/images/profile-hex.png">
       </div>
       <br>
       <div>
-        <h2>Luna Morris</h2>
+        <h2 class="username">Luna Morris</h2>
       </div>
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
     <!--form for creating a new tweet-->
       <section class="new-tweet">
-        <h2><b>Compose Tweet</b></h2>
+        <div class="error-container">
+          <span class="error-message"></span>
+        </div>
         <form id="post-tweet" action="/tweets" method="POST">
           <span class="tweet-input">
             <label for="tweet-text" class="tweet-prompt"><b>What are you humming about?</b></label>

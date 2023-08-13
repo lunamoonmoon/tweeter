@@ -8,6 +8,15 @@ article.tweet {
   padding: 1em;
 }
 
+img.profile-img {
+  height: 2em;
+}
+
+.profile-avatar-name{
+  display: flex;
+  align-items: center;
+}
+
 article.tweet header {
   display: flex;
   justify-content: space-between;
