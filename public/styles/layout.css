@@ -30,3 +30,57 @@ main {
   background-color: #f4f1ec;
   margin: auto;
 }
+
+/* for mobile view */
+@media only screen and (max-width: 768px) {
+  header.profile {
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 520px;
+    width: 100%;
+  }
+}
+
+/* for tablet view */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  header.profile {
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 520px;
+    width: 100%;
+  }
+}
+
+/* for desktop view */
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+  }
+
+  header.profile {
+    height: 30%;
+    width: 30%;
+    margin: 1em;
+    margin-top: 200px;
+    padding: 1em;
+  }
+
+  main.container {
+    width: 50%;
+    margin-top: 60px;
+  }
+
+  section.new-tweet {
+    padding-top: 120px;
+    justify-content: right;
+  }
+
+  section#tweets-container {
+    justify-content: right;
+  }
+
+}
+
+
