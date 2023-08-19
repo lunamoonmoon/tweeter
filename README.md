@@ -1,8 +1,8 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page ~~Twitter~~ X clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+**This project is an expansion forked from [Lighthouse Labs starter code](https://github.com/lighthouse-labs/tweeter)**
 
 ## Getting Started
 
@@ -15,4 +15,11 @@ This repository is the starter code for the project: Students will fork and clon
 ## Dependencies
 
 - Express
+- Body parser
+- Chance
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Screenshot of desktop tweeter"](https://github.com/lunamoonmoon/tweeter/blob/master/docs/Tweeter-Desktop-View.png?raw=true)
+!["Screenshot of mobile tweeter"](https://github.com/lunamoonmoon/tweeter/blob/master/docs/Tweeter-Mobile-View.png?raw=true)
